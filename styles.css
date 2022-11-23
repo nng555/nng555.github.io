@@ -4,7 +4,7 @@ body {
   margin-top: 25px;
   font-family: 'Helvetica';
   color: #363636;
-  line-height: 1.2em;
+  line-height: 1.3em;
 }
 
 .row {
@@ -13,4 +13,22 @@ body {
 
 .column {
   flex: 50%;
+}
+
+.paper {
+  flex: 70%;
+  margin: 10px;
+}
+
+.fig {
+  flex: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden
+}
+
+.fig img {
+  min-width: 100%;
+  object-fit: cover;
 }

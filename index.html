@@ -1,6 +1,7 @@
 <html>
   <head>
     <link rel='stylesheet', href='styles.css'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'/>
   </head>
   <body>
     <div class='row'>
@@ -25,7 +26,73 @@
     <a href='#news'>news</a>&emsp;&emsp;
     <a href='#pubs'>publications</a>
     <p id='aboutme'>
-    I'm a fourth year PhD student at the University of Toronto visiting at MIT advised by <a href='https://healthyml.org'>Marzyeh Ghassemi</a>.
+    I'm a fourth year PhD student at the University of Toronto visiting at MIT advised by <a href='https://healthyml.org'>Marzyeh Ghassemi</a>. My research focuses on learning robust representations of data, specifically natural language. Currently I am excited about 
     </p>
+    <br>
+
+    <h2 id='news'>news</h2>
+    <ul> 
+      <li><b>November 3, 2022</b> I will be presenting my work on <a href='https://arxiv.org/abs/2209.05364'>If Influence Functions are the Answer, Then What is the Question?</a> at NeurIPS 2022!
+    </ul>
+    <br>
+
+    <div id='pubs'>
+      <h2>conference publications</h2>
+
+      <div class='row'>
+        <div class='paper'>
+          <a href='https://arxiv.org/abs/2207.02093'>Predicting Out-of-Domain Generalization with Local Manifold Smoothness</a><br>
+          <b>Nathan Ng</b>, Neha Hulkund, Kyunghyun Cho, Marzyeh Ghassemi<br>
+          Submitted to TMLR<br><br>
+          We propose a complexity measure based on measuring the smoothness of a classifier in a manifold neighborhood around a given test point and demonstrate its correlation with out-of-domain generalization on a large suite of models and tasks.
+        </div>
+        <div class='fig'>
+          <img src='img/smoothness.png'>
+        </div>
+      </div>
+      <br>
+
+      <div class='row'>
+        <div class='paper'>
+          <a href='https://arxiv.org/abs/2209.05364'>If Influence Functions are the Answer, Then What is the Question?</a><br>
+          Juhan Bae, <b>Nathan Ng</b>, Alston Lo, Marzyeh Ghassemi, Roger Grosse<br>
+          NeurIPS 2022<br><br>
+          We decompose the sources of error that cause misalignment between influence function estimates and the results of true leave-one-out retraining in neural networks. Our results show that influence function estimates are a good approximation for a different object we call the proximal Bregman response function (PBRF) that can still be used to answer many of the questions that originally motivated influence functions.
+        </div>
+        <div class='fig'>
+          <img src='img/influence.png'>
+        </div>
+      </div>
+      <br>
+
+      <div class='row'>
+        <div class='paper'>
+          <a href='https://arxiv.org/abs/2009.10195'>SSMBA: Self-Supervised Manifold Based Data Augmentation for Improving Out-of-Domain Robustness</a><br>
+          <b>Nathan Ng</b>, Kyunghyun Cho, Marzyeh Ghassemi<br>
+          EMNLP 2020<br><br>
+          We propose SSMBA, a data augmentation method based on moving along the data manifold by corrupting and reconstructing examples with a denoising autoencoder. We investigate SSMBA on a large array of natural language tasks and find it significantly improves both in-domain and out-of-domain generalization compared to baseline methods.
+        </div>
+        <div class='fig'>
+          <img src='img/ssmba.png'>
+        </div>
+      </div>
+      <br>
+
+      <h2>workshop publications</h2>
+
+      <div class='row'>
+        <div class='paper'>
+          <a href='https://arxiv.org/abs/2011.00136'>Improving Dialogue Breakdown Detection with Semi-Supervised Learning</a>
+          <b>Nathan Ng</b>, Marzyeh Ghassemi, Narendran Thangarajan, Jiacheng Pan, Qi Guo<br>
+          International Workshop on Spoken Dialogue Systems Technology 2020<br><br>
+          We investigate the use of semi-supervised learning techniques for the task of dialogue breakdown detection, including continued pre-training and data augmentation. Our final model placed first in the <a href='https://chateval.org/dbdc5'>DBDC5 2020</a> shared task. 
+        </div>
+        <div class='fig'>
+          <img src='img/dbdc.png'>
+        </div>
+      </div>
+      <br>
+
+    </div>
   </body>
 </html>
