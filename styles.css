@@ -1,0 +1,16 @@
+body {
+  width: 800px;
+  margin: auto;
+  margin-top: 25px;
+  font-family: 'Helvetica';
+  color: #363636;
+  line-height: 1.2em;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+}
