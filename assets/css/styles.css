@@ -66,6 +66,8 @@ a:hover {
 }
 .floatright {
     float:right;
+    margin-left: 50px;
+    margin-right: 20px;
 }
 
 .footer {
@@ -81,3 +83,10 @@ a:hover {
   padding-right: 13px;
   padding-left: 13px;
 }
+
+ul li {
+  justify-content: space-between;
+  display: flex;
+  margin-bottom: 5px;
+}
+
