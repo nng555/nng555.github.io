@@ -4,10 +4,11 @@
 
 html, body {
    width: 100%;
+   height: 100%;
 }
 
 main {
-  padding-left: 25px;
+  padding-left: 20px;
 }
 
 body {
@@ -32,9 +33,10 @@ body {
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  height: 100vh; 
+  height: 100%;
   margin: 0 auto;
 }
+
 .site-header,
 .site-footer {
   -webkit-flex-shrink: 0;
@@ -63,4 +65,15 @@ a:visited {
   color: inherit;
   text-decoration: underline;
   -webkit-text-decoration-color: rgba(161, 161, 161, 0.7);
+}
+
+.floatleft {
+    float:left;
+}
+.floatright {
+    float:right;
+}
+
+.footer {
+  padding-bottom: 25px;
 }

@@ -3,12 +3,16 @@ layout: default
 ---
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 <h2>{{ page.title }}</h2>
+  {%- if page.image -%}
+  <p><img src={{ page.image }} alt={{ page.image-alt }} width={{ page.width }}% /></p>
+  {%- endif -%}
   <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     {{ page.date | date: date_format }}
   </time>
+
   {%- if page.authors -%}
-   &emsp;/&emsp; <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.authors }}</span></span>
+   &emsp;&emsp;/&emsp; <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.authors }}</span></span>
   {%- endif -%}</p>
 
   <div class="post-content e-content" itemprop="articleBody">
