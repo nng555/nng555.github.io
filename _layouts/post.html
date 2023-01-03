@@ -6,6 +6,11 @@ layout: default
   {%- if page.image -%}
   <p><img src={{ page.image }} alt={{ page.image-alt }} width={{ page.width }}% /></p>
   {%- endif -%}
+
+  {%- if page.rating -%}
+  <h3 class="rating">{{ page.rating }} / 10</h3><br><br>
+  {%- endif -%}
+
   <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     {{ page.date | date: date_format }}

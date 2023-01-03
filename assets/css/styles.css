@@ -77,3 +77,13 @@ a:visited {
 .footer {
   padding-bottom: 25px;
 }
+
+.rating {
+  border-width: 3px;
+  border-style: solid;
+  display: inline;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  padding-right: 12px;
+  padding-left: 12px;
+}
