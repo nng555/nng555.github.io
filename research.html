@@ -6,19 +6,21 @@ layout: default
 <ul>
   {% for post in site.categories.conference %}
     <li>
-      {% if post.categories contains "blog" %}
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      {% else %}
-        <a href="{{ post.arxiv }}">{{ post.title }}</a>
-      {% endif %}
+      <div class="floatleft">
+        {% if post.categories contains "blog" %}
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        {% else %}
+          <a href="{{ post.arxiv }}">{{ post.title }}</a>
+        {% endif %}
+        <br>
+        <div class="authors">
+          {{ post.authors }}
+          {% if post.venue %}
+            <br>{{ post.venue }}
+          {% endif %}
+        </div>
+      </div>
     </li>
-    <div class="authors">
-      {{ post.authors }}
-      {% if post.venue %}
-        <br>{{ post.venue }}
-      {% endif %}
-    </div>
-    <br>
   {% endfor %}
 </ul>
 
@@ -26,18 +28,20 @@ layout: default
 <ul>
   {% for post in site.categories.workshop %}
     <li>
-      {% if post.categories contains "blog" %}
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      {% else %}
-        <a href="{{ post.arxiv }}">{{ post.title }}</a>
-      {% endif %}
+      <div class="floatleft">
+        {% if post.categories contains "blog" %}
+          <a href="{{ post.url }}">{{ post.title }}</a>
+        {% else %}
+          <a href="{{ post.arxiv }}">{{ post.title }}</a>
+        {% endif %}
+        <br>
+        <div class="authors">
+          {{ post.authors }}
+          {% if post.venue %}
+            <br>{{ post.venue }}
+          {% endif %}
+        </div>
+      </div>
     </li>
-    <div class="authors">
-      {{ post.authors }}
-      {% if post.venue %}
-        <br>{{ post.venue }}
-      {% endif %}
-    </div>
-    <br>
   {% endfor %}
 </ul>
