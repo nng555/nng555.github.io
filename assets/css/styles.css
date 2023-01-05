@@ -15,7 +15,7 @@ body {
   background-color:#ffffff;
   color: black;
   font-size: 16px;
-  padding: 6.25%;
+  padding: max(30px, 6.25%);
   line-height: 1.4;
   box-sizing: border-box;
   font-family: 'Helvetica';
@@ -102,4 +102,8 @@ ul {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.heading {
+  margin-top: 0px;
 }
