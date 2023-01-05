@@ -67,7 +67,7 @@ a:hover {
 }
 .floatright {
     float:right;
-    margin-left: 50px;
+    margin-left: 20px;
     margin-right: 20px;
 }
 
@@ -91,3 +91,6 @@ ul li {
   margin-bottom: 5px;
 }
 
+.tex {
+  font-family: 'Latin Modern Roman';
+}

@@ -21,7 +21,13 @@ layout: default
   {%- endif -%}</p>
 
   <div class="post-content e-content" itemprop="articleBody">
-    {{ content }}
+    {% if page.tex %}
+    <div class="tex">
+    {% endif %}
+      {{ content }}
+    {% if page.tex %}
+    </div>
+    {% endif %}
   </div>
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
