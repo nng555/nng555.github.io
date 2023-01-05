@@ -8,7 +8,7 @@ html, body {
 }
 
 main {
-  padding-left: 2.5%;
+  padding-left: min(2.5%, 20px;);
 }
 
 body {
@@ -67,8 +67,8 @@ a:hover {
 }
 .floatright {
     float:right;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
+    margin-left: min(2.5%, 20px);
+    margin-right: min(2.5%, 20px);
 }
 
 .footer {
@@ -92,7 +92,7 @@ ul li {
 }
 
 ul {
-  padding-inline-start: 5%;
+  padding-inline-start: min(5%, 40px);
 }
 
 .tex {
@@ -102,6 +102,10 @@ ul {
 img {
   max-width: 100%;
   height: auto;
+}
+
+img.half {
+  max-width: max(50%, 300px);
 }
 
 .heading {
