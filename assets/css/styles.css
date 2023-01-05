@@ -8,14 +8,14 @@ html, body {
 }
 
 main {
-  padding-left: 20px;
+  padding-left: 2.5%;
 }
 
 body {
   background-color:#ffffff;
   color: black;
   font-size: 16px;
-  padding: 50px;
+  padding: 6.25%;
   line-height: 1.4;
   box-sizing: border-box;
   font-family: 'Helvetica';
@@ -67,8 +67,8 @@ a:hover {
 }
 .floatright {
     float:right;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
 }
 
 .footer {
@@ -91,6 +91,15 @@ ul li {
   margin-bottom: 5px;
 }
 
+ul {
+  padding-inline-start: 5%;
+}
+
 .tex {
   font-family: 'Latin Modern Roman';
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
