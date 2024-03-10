@@ -11,10 +11,12 @@ layout: default
   <h3 class="rating">{{ page.rating }} / 10</h3><br><br>
   {%- endif -%}
 
+  {%- unless page.nodate -%}
   <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
     {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
     {{ page.date | date: date_format }}
   </time>
+  {%- endunless -%}
 
   {%- if page.authors -%}
    &emsp;&emsp;/&emsp; <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span class="p-author h-card" itemprop="name">{{ page.authors }}</span></span>

@@ -112,3 +112,8 @@ img.half {
 .heading {
   margin-top: 0px;
 }
+
+.highlighted {
+  background-color: yellow;
+  font-weight: bold;
+}
