@@ -1,13 +1,20 @@
-import { scores } from '/assets/scores/between.js';
+async function load_scores(fname) {
+  try {
+    const module = await import('/assets/scores/' + fname + '.js');
+    const scores = module.scores;
+    return scores;
+  } catch (error) {
+    console.error('Error importing module:', error);
+    return null;
+  }
+}
 
-console.log(scores.length)
-console.log(scores[0].length)
-var genElements = document.getElementsByClassName('generation');
-var contElements = document.getElementsByClassName('context');
-console.log(genElements.length)
-console.log(contElements.length)
+document.addEventListener('DOMContentLoaded', async function() {
+  const scoresContainer = document.getElementById('scoresContainer');
+  const fname = scoresContainer.dataset.fname;
 
-document.addEventListener('DOMContentLoaded', function() {
+  const scores = await load_scores(fname);
+
   var genElements = document.getElementsByClassName('generation');
   var contElements = document.getElementsByClassName('context');
   for (var j = 0; j < contElements.length; j++) {
@@ -59,3 +66,5 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+
