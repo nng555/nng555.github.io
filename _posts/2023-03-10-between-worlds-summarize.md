@@ -8,6 +8,8 @@ tex: True
 
 *Hover or click on a token generated from the LLM to view the in-context datamodel weights for the prompt tokens.*
 
+Here we consider a summarization task on movie reviews. We can detect when the LLM copies text from the prompt when a single token has an extremely high datamodel weight relative to the other tokens (i.e. "WTF moments").
+
 <hr>
 
 <script type='module' src="/assets/scores/between.js"> </script>

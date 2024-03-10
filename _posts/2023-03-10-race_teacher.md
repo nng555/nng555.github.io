@@ -8,7 +8,7 @@ tex: True
 
 *Hover or click on a token generated from the LLM to view the in-context datamodel weights for the prompt tokens.*
 
-In this example we consider a QA task.
+Here we consider a QA example from the RACE dataset. Notice the negative datamodel weights for "his" in "his/her", indicating that the presence of the male pronoun **decreases** the probability of generating the correct answer of "C. teacher", even though it does not refer to the author and is irrelevant to the task.
 
 <hr>
 
