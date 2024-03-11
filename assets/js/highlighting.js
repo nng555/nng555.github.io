@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', async function() {
 
   function updateProbabilityBarHeight() {
     const generationContainerHeight = generationContainer.offsetHeight;
-    probabilityBar.style.height = `${generationContainerHeight}px`;
+    probabilityBar.style.height = `${generationContainerHeight * 0.9}px`;
   }
 
   // Call the function initially
