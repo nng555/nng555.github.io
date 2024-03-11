@@ -1,24 +1,64 @@
-async function load_scores(fname) {
-  try {
-    const module = await import('/assets/scores/' + fname + '.js');
-    const scores = module.scores;
-    return scores;
-  } catch (error) {
-    console.error('Error importing module:', error);
-    return null;
-  }
+async function loadCSVFloat(path) {
+  const response = await fetch(path);
+  const text = await response.text();
+  const data = text.trim().split('\n').map(row => row.split(',').map(parseFloat));
+  return data;
+}
+
+async function loadCSVString(path) {
+  const response = await fetch(path);
+  const text = await response.text();
+  const data = text.trim().split('\n').map(row => row.split(','));
+  return data;
 }
 
 document.addEventListener('DOMContentLoaded', async function() {
   const scoresContainer = document.getElementById('scoresContainer');
   const fname = scoresContainer.dataset.fname;
 
-  const scores = await load_scores(fname);
+  const scoresPromise = loadCSVString('/assets/scores/' + fname + '_scores.csv');
+  const logitsPromise = loadCSVFloat('/assets/scores/' + fname + '_logits.csv');
+  const weightsPromise = loadCSVFloat('/assets/scores/' + fname + '_weights.csv');
+
+  const [scores, logits, weights] = await Promise.all([scoresPromise, logitsPromise, weightsPromise]);
+
+  console.log(scores)
+  console.log(logits)
+  console.log(weights)
 
   const genElements = document.getElementsByClassName('generation');
   const contElements = document.getElementsByClassName('context');
 
+  const generationContainer = document.getElementById('generation-container');
+  const probabilityBar = document.getElementById('probability-bar');
+  const probabilityFill = document.getElementById('probability-fill');
+  const probabilityValue = document.getElementById('probability-value');
+
+  function updateProbabilityBarHeight() {
+    const generationContainerHeight = generationContainer.offsetHeight;
+    probabilityBar.style.height = `${generationContainerHeight}px`;
+  }
+
+  // Call the function initially
+  updateProbabilityBarHeight();
+
+  // Call the function whenever the window is resized
+  window.addEventListener('resize', updateProbabilityBarHeight);
+
   let activeIndex = -1;
+  let activeContextIndex = -1;
+
+  function updateProbabilityBar() {
+    if (activeIndex !== -1) {
+      const logit = logits[activeIndex];
+      const probability = 1 / (1 + Math.exp(-logit));
+      probabilityFill.style.height = `${probability * 100}%`;
+      probabilityValue.textContent = probability.toFixed(2);
+    } else {
+      probabilityFill.style.height = '0';
+      probabilityValue.textContent = '';
+    }
+  }
 
   function resetColors() {
     for (let j = 0; j < contElements.length; j++) {
@@ -46,7 +86,9 @@ document.addEventListener('DOMContentLoaded', async function() {
         setColors(i);
         activeIndex = i;
       }
+      updateProbabilityBar();
     });
+
     genElements[i].addEventListener('mouseover', function() {
       if (activeIndex !== i) {
         setColors(i);
@@ -66,4 +108,12 @@ document.addEventListener('DOMContentLoaded', async function() {
       }
     });
   }
+
+  for (let i = 0; i < contElements.length; i++) {
+    contElements[i].addEventListener('click', function() {
+      activeContextIndex = i;
+      updateProbabilityBar();
+    });
+  }
+
 });

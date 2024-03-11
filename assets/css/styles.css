@@ -22,7 +22,9 @@ html, body {
 }
 
 main {
-  padding-left: min(2.5%, 20px;);
+  padding-left: min(2.5%, 20px);
+  position: relative;
+  padding-right: 40px; /* Adjust the padding to create space for the probability bar */
 }
 
 body {
@@ -125,4 +127,47 @@ img.half {
 
 .context {
   transition: background-color 0.3s ease;
+}
+
+#generation-container {
+  position: relative;
+  display: inline-block;
+}
+
+
+#probability-container {
+  position: absolute;
+  right: -80px; /* Adjust the distance from the generated tokens */
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column; /* Change to column direction */
+  align-items: center;
+}
+
+#probability-bar {
+  width: 20px;
+  height: 150px; /* Adjust the height as needed */
+  background-color: #ccc;
+  position: relative;
+  border: 1px solid #000; /* Add border around the bar */
+  margin-bottom: 5px; /* Add margin bottom for spacing */
+}
+
+#probability-bar.min-height {
+  min-height: 100px; /* Set the desired minimum height */
+}
+
+#probability-value {
+  font-size: 16px; /* Adjust font size as needed */
+  text-align: center; /* Center align the probability value */
+}
+
+#probability-fill {
+  width: 100%;
+  height: 0%;
+  background-color: #4CAF50;
+  position: absolute;
+  bottom: 0;
+  transition: height 0.5s ease;
 }
