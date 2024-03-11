@@ -46,19 +46,28 @@ document.addEventListener('DOMContentLoaded', async function() {
   window.addEventListener('resize', updateProbabilityBarHeight);
 
   let activeIndex = -1;
-  let activeContextIndex = -1;
+
+  let clickedContextTokens = [];
 
   function updateProbabilityBar() {
     if (activeIndex !== -1) {
-      const logit = logits[activeIndex];
+      let logit = logits[activeIndex];
+      
+      // Subtract the weights of clicked context tokens from the logit value
+      for (let i = 0; i < clickedContextTokens.length; i++) {
+        const tokenIndex = clickedContextTokens[i];
+        logit -= weights[activeIndex][tokenIndex];
+      }
+      
       const probability = 1 / (1 + Math.exp(-logit));
       probabilityFill.style.height = `${probability * 100}%`;
       probabilityValue.textContent = probability.toFixed(2);
     } else {
       probabilityFill.style.height = '0';
-      probabilityValue.textContent = '';
+      probabilityValue.textContent = '0.00';
     }
   }
+
 
   function resetColors() {
     for (let j = 0; j < contElements.length; j++) {
@@ -111,7 +120,17 @@ document.addEventListener('DOMContentLoaded', async function() {
 
   for (let i = 0; i < contElements.length; i++) {
     contElements[i].addEventListener('click', function() {
-      activeContextIndex = i;
+      const tokenIndex = i;
+      
+      // Toggle the clicked state of the context token
+      if (clickedContextTokens.includes(tokenIndex)) {
+        clickedContextTokens = clickedContextTokens.filter(index => index !== tokenIndex);
+        this.style.backgroundColor = scores[activeIndex][tokenIndex]; // Reset the background color based on scores
+      } else {
+        clickedContextTokens.push(tokenIndex);
+        this.style.backgroundColor = '#AAA'; // Set the background color to gray
+      }
+      
       updateProbabilityBar();
     });
   }
