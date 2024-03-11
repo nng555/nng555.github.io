@@ -115,9 +115,11 @@ img.half {
 
 .generation {
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.generation.active {
+.generation.active,
+.generation:hover {
   background-color: #CCC;
 }
 

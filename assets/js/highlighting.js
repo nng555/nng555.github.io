@@ -47,10 +47,12 @@ document.addEventListener('DOMContentLoaded', async function() {
         activeIndex = i;
       }
     });
-
     genElements[i].addEventListener('mouseover', function() {
       if (activeIndex !== i) {
         setColors(i);
+        if (activeIndex !== -1) {
+          genElements[activeIndex].classList.remove('active');
+        }
       }
     });
 
@@ -59,6 +61,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         resetColors();
         if (activeIndex !== -1) {
           setColors(activeIndex);
+          genElements[activeIndex].classList.add('active');
         }
       }
     });
