@@ -10,6 +10,8 @@ tex: True
 
 Here we consider a QA example from the RACE dataset. Notice the negative datamodel weights for "his" in "his/her", indicating that the presence of the male pronoun **decreases** the probability of generating the correct answer of "C. teacher", even though it does not refer to the author and is irrelevant to the task.
 
+(Note that we do not show weights for the question and options since they are much larger than the weights for the rest of the prompt that we'd like to visualize.)
+
 <hr>
 
 <script type='module' src="/assets/scores/race_teacher.js"> </script>

@@ -15,56 +15,52 @@ document.addEventListener('DOMContentLoaded', async function() {
 
   const scores = await load_scores(fname);
 
-  var genElements = document.getElementsByClassName('generation');
-  var contElements = document.getElementsByClassName('context');
-  for (var j = 0; j < contElements.length; j++) {
-    contElements[j].setAttribute('data-color', "white");
+  const genElements = document.getElementsByClassName('generation');
+  const contElements = document.getElementsByClassName('context');
+
+  let activeIndex = -1;
+
+  function resetColors() {
+    for (let j = 0; j < contElements.length; j++) {
+      contElements[j].style.backgroundColor = '';
+    }
   }
 
-  for (var i = 0; i < genElements.length; i++) {
+  function setColors(index) {
+    for (let j = 0; j < contElements.length; j++) {
+      contElements[j].style.backgroundColor = scores[index][j];
+    }
+  }
 
+  for (let i = 0; i < genElements.length; i++) {
     genElements[i].addEventListener('click', function() {
-      for (var j = 0; j < genElements.length; j++) {
-        genElements[j].style.backgroundColor = "white";
-        genElements[j].setAttribute('data-color', "white");
-      }
-      this.style.backgroundColor = "#888";
-      this.setAttribute('data-color', "#888");
-
-      var index = Array.prototype.indexOf.call(genElements, this);
-
-      var contElements = document.getElementsByClassName('context');
-      for (var j = 0; j < contElements.length; j++) {
-        contElements[j].style.backgroundColor = scores[index][j];
-        contElements[j].setAttribute('data-color', scores[index][j]);
+      if (activeIndex === i) {
+        resetColors();
+        this.classList.remove('active');
+        activeIndex = -1;
+      } else {
+        for (let j = 0; j < genElements.length; j++) {
+          genElements[j].classList.remove('active');
+        }
+        this.classList.add('active');
+        setColors(i);
+        activeIndex = i;
       }
     });
 
     genElements[i].addEventListener('mouseover', function() {
-      for (var j = 0; j < genElements.length; j++) {
-        genElements[j].style.backgroundColor = "white";
-      }
-      this.style.backgroundColor = "#888";
-
-      var index = Array.prototype.indexOf.call(genElements, this);
-
-      var contElements = document.getElementsByClassName('context');
-      for (var j = 0; j < contElements.length; j++) {
-        contElements[j].style.backgroundColor = scores[index][j];
+      if (activeIndex !== i) {
+        setColors(i);
       }
     });
 
     genElements[i].addEventListener('mouseout', function() {
-      for (var j = 0; j < genElements.length; j++) {
-        genElements[j].style.backgroundColor = genElements[j].getAttribute('data-color');
-      }
-
-      var contElements = document.getElementsByClassName('context');
-      for (var j = 0; j < contElements.length; j++) {
-        contElements[j].style.backgroundColor = contElements[j].getAttribute('data-color');
+      if (activeIndex !== i) {
+        resetColors();
+        if (activeIndex !== -1) {
+          setColors(activeIndex);
+        }
       }
     });
   }
 });
-
-
