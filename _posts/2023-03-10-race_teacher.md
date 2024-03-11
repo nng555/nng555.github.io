@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  RACE Bias
+title:  RACE QA
 categories: influence
 nodate: True
 tex: True

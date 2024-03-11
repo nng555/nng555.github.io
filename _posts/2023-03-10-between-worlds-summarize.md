@@ -12,7 +12,6 @@ Here we consider a summarization task on movie reviews. We can detect when the L
 
 <hr>
 
-<script type='module' src="/assets/scores/between.js"> </script>
 <script type='module' src='/assets/js/highlighting.js'> </script>
 <div id="scoresContainer" data-fname="between"></div>
 
