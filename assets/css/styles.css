@@ -121,7 +121,7 @@ img.half {
 }
 
 .generation.active,
-.generation:hover {
+.generation:hover, .generation:active {
   background-color: #CCC;
 }
 
@@ -134,15 +134,20 @@ img.half {
   display: inline-block;
 }
 
-
 #probability-container {
   position: absolute;
-  right: -80px; /* Adjust the distance from the generated tokens */
-  top: 0;
-  bottom: 0;
+  right: -60px; /* Adjust the distance from the generated tokens */
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
-  flex-direction: column; /* Change to column direction */
+  flex-direction: column;
   align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  #probability-container {
+    right: -40px; /* Adjust the distance for mobile screens */
+  }
 }
 
 #probability-bar {
