@@ -16,9 +16,9 @@ document.addEventListener('DOMContentLoaded', async function() {
   const scoresContainer = document.getElementById('scoresContainer');
   const fname = scoresContainer.dataset.fname;
 
-  const scoresPromise = loadCSVString('/assets/scores/' + fname + '_scores.csv');
-  const logitsPromise = loadCSVFloat('/assets/scores/' + fname + '_logits.csv');
-  const weightsPromise = loadCSVFloat('/assets/scores/' + fname + '_weights.csv');
+  const scoresPromise = loadCSVString('/assets/scores/' + fname + '/colors.csv');
+  const logitsPromise = loadCSVFloat('/assets/scores/' + fname + '/logits.csv');
+  const weightsPromise = loadCSVFloat('/assets/scores/' + fname + '/weights.csv');
 
   const [scores, logits, weights] = await Promise.all([scoresPromise, logitsPromise, weightsPromise]);
 
