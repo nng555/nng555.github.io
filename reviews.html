@@ -6,14 +6,27 @@ layout: default
 These are reviews of selected content that I've consumed, including music, books, movies, etc. Mostly used as an archive for personal thoughts to force myself to engage more deeply with media. Reviews with ratings are out of 10.
 <ul>
   {% for post in site.categories.review %}
-    <li>
+  <li class="review">
       <div class="floatleft">
-        <a href="{{ post.url }}">{{ post.title }}</a>
+        <a href="{{ post.url }}">
+          {{ post.title }} 
+          {% if post.cont-author %} 
+          - {{ post.cont-author }} ({{ post.cont-year }})
+          {% endif %}
+        </a>
       </div>
       {% if post.rating %}
       <div class="floatright">
-        {{ post.rating }}
+        <b>{{ post.rating }}</b>
       </div>
+      {% endif %}
+
+      {% if post.categories contains 'book' %}
+      <div class="icon book"></div>
+      {% elsif post.categories contains 'movie' %}
+      <div class="icon movie"></div>
+      {% elsif post.categories contains 'music' %}
+      <div class="icon music"></div>
       {% endif %}
     </li>
   {% endfor %}

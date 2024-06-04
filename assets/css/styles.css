@@ -78,6 +78,10 @@ a:hover {
   padding-bottom: 25px;
 }
 
+.cont {
+  margin-bottom: 0px;
+}
+
 .rating {
   border-width: 3px;
   border-style: solid;
@@ -89,13 +93,36 @@ a:hover {
 }
 
 ul li {
-  justify-content: space-between;
   display: flex;
   margin-bottom: 5px;
+  position: relative;
 }
 
-ul {
-  padding-inline-start: min(5%, 40px);
+li.review {
+  justify-content: space-between;
+  padding-left: 25px;
+}
+
+.icon {
+  position: absolute;
+  left: 0;
+  top: 10%;
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.icon.book {
+  background-image: url("/assets/favicon/book.png");
+}
+
+.icon.movie {
+  background-image: url("/assets/favicon/movie.png");
+}
+
+.icon.music {
+  background-image: url("/assets/favicon/music.png");
 }
 
 .tex {

@@ -9,6 +9,17 @@
     gtag('config', 'G-5JCW2FMG7W');
   </script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var details = document.getElementsByTagName('details');
+      setTimeout(function() {
+        for (var i = 0; i < details.length; i++) {
+          details[i].removeAttribute('open');
+        }
+      }, 400); // Adjust the delay (in milliseconds) as needed
+    });
+  </script>
+
   <!-- mathjax -->
   <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS_CHTML">
@@ -26,6 +37,7 @@
         autoNumber: "AMS"
         }
       }
+
     });
   </script>
 

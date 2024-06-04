@@ -1,6 +1,8 @@
 ---
 layout: post
-title:  "Four Thousand Weeks: Time Management for Mortals - Oliver Burkeman"
+title:  "Four Thousand Weeks: Time Management for Mortals"
+cont-author: Oliver Burkeman
+cont-year: 2021
 categories: review book
 authors: Nathan Ng
 rating: 7
