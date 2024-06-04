@@ -4,10 +4,9 @@ layout: default
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   <h2 class="cont">{{ page.title }}</h2>
   {%- if page.cont-author -%}
-  {{ page.cont-year }},&emsp;
   {%- if page.categories contains "movie" -%}directed&emsp;
   {%- elsif page.categories contains "book" -%}written&emsp;
-  {%- endif -%} by {{ page.cont-author }}
+  {%- endif -%} by {{ page.cont-author }} ({{page.cont-year}})
   {%- endif -%}
   <hr>
 

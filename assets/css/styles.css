@@ -93,20 +93,19 @@ a:hover {
 }
 
 ul li {
-  display: flex;
   margin-bottom: 5px;
   position: relative;
 }
 
-li.review {
+li.post-list {
+  display: flex;
   justify-content: space-between;
-  padding-left: 25px;
 }
 
 .icon {
   position: absolute;
   left: 0;
-  top: 10%;
+  top: 5%;
   width: 18px;
   height: 18px;
   background-repeat: no-repeat;
