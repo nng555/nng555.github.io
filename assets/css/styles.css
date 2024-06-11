@@ -203,3 +203,11 @@ img.half {
   bottom: 0;
   transition: height 0.5s ease;
 }
+
+img + em {
+  display: block; 
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  font-size: 14px;
+}
