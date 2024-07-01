@@ -3,7 +3,7 @@ layout: default
 ---
 
 <h3>reviews</h3>
-These are reviews of selected content that I've consumed, including music, books, movies, etc. Mostly used as an archive for personal thoughts to force myself to engage more deeply with media. Reviews with ratings are out of 10.
+These are reviews of selected content that I've consumed, including music, books, movies, etc. Mostly used as an archive for personal thoughts to force myself to engage more deeply with media. No scores provided since I found them a distraction, but I'll star anything I highly recommend.
 <ul>
   {% for post in site.categories.review %}
   <li class="post-list" style="padding-left: 25px;">
@@ -15,11 +15,11 @@ These are reviews of selected content that I've consumed, including music, books
           {% endif %}
         </a>
       </div>
-      {% if post.rating %}
+      <!--{% if post.rating %}
       <div class="floatright">
         <b>{{ post.rating }}</b>
       </div>
-      {% endif %}
+      {% endif %}-->
 
       {% if post.categories contains 'book' %}
       <div class="icon book"></div>
