@@ -1,6 +1,9 @@
 ---
 layout: default
 ---
+
+{% assign psize = site.categories.preprint | size %}
+{% if psize != 0 %}
 <h3>preprints</h3>
 <ul>
   {% for post in site.categories.preprint %}
@@ -22,6 +25,7 @@ layout: default
     </li>
   {% endfor %}
 </ul>
+{% endif %}
 
 <h3>refereed publications</h3>
 <ul>
