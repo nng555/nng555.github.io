@@ -130,11 +130,18 @@ li.post-list {
 
 img {
   max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   height: auto;
 }
 
 img.half {
   max-width: max(50%, 300px);
+}
+
+img.three-quarter {
+  max-width: max(75%, 300px);
 }
 
 .heading {
@@ -204,10 +211,14 @@ img.half {
   transition: height 0.5s ease;
 }
 
-img + em {
+img + em, .img-cap {
   display: block; 
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 5%;
   font-size: 14px;
 }
+
+.markdown-rendered mjx-container {
+    overflow-x: scroll;
+  }
