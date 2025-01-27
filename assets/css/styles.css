@@ -222,3 +222,54 @@ img + em, .img-cap {
 .markdown-rendered mjx-container {
     overflow-x: scroll;
   }
+
+.supper-club {
+  max-width: 460px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  text-align: left;
+}
+
+.supper-club h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+}
+
+.supper-club h1 span {
+  margin: 0 0.4em;
+}
+
+.season {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 3.5rem;
+  font-weight: 400;
+}
+
+.events {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.event {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.event-title {
+  font-weight: 400;
+}
+
+.event-datetime {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+@media (max-width: 480px) {
+  .supper-club {
+    padding: 3rem 1.5rem;
+  }
+}
