@@ -233,6 +233,7 @@ img + em, .img-cap {
 .supper-club h1 {
   font-size: 2rem;
   font-weight: 400;
+  margin-bottom: 0;
   letter-spacing: 0.15em;
 }
 
@@ -240,10 +241,17 @@ img + em, .img-cap {
   margin: 0 0.4em;
 }
 
-.season {
+.supper-club h2 {
   font-size: 0.85rem;
   color: #666;
-  margin-bottom: 3.5rem;
+  margin: 0;
+  font-weight: 400;
+}
+
+.season {
+  font-size: 0.85rem;
+  color: #333;
+  margin: 1.5rem 0;
   font-weight: 400;
 }
 
